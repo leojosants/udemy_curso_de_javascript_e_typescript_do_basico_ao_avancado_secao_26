@@ -64,7 +64,7 @@ describe('ShoppingCart', () => {
     expect(sut.isEmpty()).toBe(true);
   });
 
-  it('should remove', () => {
+  it('should remove products', () => {
     const { sut } = createSutWithProducts();
     expect(sut.items.length).toBe(2);
     sut.removeItem(1);
