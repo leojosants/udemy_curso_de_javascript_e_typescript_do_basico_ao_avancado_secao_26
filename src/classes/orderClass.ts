@@ -1,8 +1,5 @@
 /* - - - - - - - - - - - - - - - imports - - - - - - - - - - - - - - - */
-import { ShoppingCart } from "./shoppingCartClass";
 import { OrderStatusType } from "../types/orderStatusType";
-import { Messaging } from "../services/messagingService";
-import { Persistency } from "../services/persintencyService";
 import { ShoppingCartProtocol } from "../interfaces/shoppingCartProtocol";
 import { CustomerOrderProtocol } from "../interfaces/CustomerProtocol";
 import { MessagingProtocol } from "../interfaces/messagingProtocol";
@@ -16,7 +13,12 @@ export class Order {
   private readonly persistency: PersistencyProtocol;
   private readonly customer: CustomerOrderProtocol;
 
-  constructor(cart: ShoppingCart, messaging: Messaging, persistency: Persistency, customer: CustomerOrderProtocol) {
+  constructor(
+    cart: ShoppingCartProtocol,
+    messaging: MessagingProtocol,
+    persistency: PersistencyProtocol,
+    customer: CustomerOrderProtocol,
+  ) {
     this.cart = cart;
     this.messaging = messaging;
     this.persistency = persistency;
